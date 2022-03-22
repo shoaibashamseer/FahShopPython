@@ -21,7 +21,7 @@
     <div>
         <div class="row my_row">
             <div class="mx-auto">
-                <p><a href="{% url 'eApp:allProducts' %}">All Product Collections</a> </p>
+                <p><a href="{% url 'eApp:allProducts' %}" >All Product Collections</a> </p>
             </div>
         </div>
     </div>
@@ -37,20 +37,20 @@
     </div>
         {% else %}
     <div>
-        <img class="my_image my_image_padding" src="{% static 'img/banner.png' %}" alt="our products" width="100%" height="250px"/>
+        <img class="my_image my_image_padding" src="{% static 'img/banner1.jpg' %}" alt="our products" width="100%" height="250px"/>
     </div>
     <br>
 
     <div class="content">
-        <h1 class="text-center my_title">Our Product Collections</h1>
-        <p class="text-justify">readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, </p>
+        <h1 class="text-center my_title" style="color:#ED2058">Our Product Collections</h1>
+        <p class="text-justify my_text" style="font-size:18px">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. , </p>
     </div>
     {% endif %}
 <div class="container">
     <div class="row mx_auto">
             {% for product in products.object_list %}
             <div class="my-bottom-margin col-sm-12 col-md-4 col-lg-4 col-md-12 ">
-                <div class="card">
+                <div class="card"  style="font-size:18px">
                     <a href="{{product.get_url}}"><img class="card-img-top " src="{{product.image.url}}" alt="{{product.name}}" height="250px" width="250px"> </a>
                     <div class="card-body">
                         <h4 class="card-title">{{product.name}}</h4>

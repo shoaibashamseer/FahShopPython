@@ -1,6 +1,6 @@
 body {
     font-family: "Gill Sans Extrabold", sans-serif;
-    font_size : 14px;
+    font_size : 20px;
     font-weight : 20px;
 }
 
@@ -54,6 +54,9 @@ padding-top:30px;
 .my-bottom-margin{
     margin-bottom : 10px;
 }
+.my_text {
+    font_size:24px;
+ }
 /* product page */
  .my_prod_row_class{
     padding-top: 15px;
