@@ -11,44 +11,31 @@
     {% endif %}
 {% endblock %}
 {% block content %}
-    <div class="row my_prod_row_class">
-        <div class="mx_auto" style="font-size:17px;color:#84D39A">
-            <p><a href="{% url 'eApp:allProducts' %}" style="font-size:17px;color:#84D39A">Home</a>|<a href="{{product.category.get_url}}"style="font-size:17px;color:#84D39A" >{{product.category}}</a>|{{product.name}}</p>
-        </div>
+<div class="row my_prod_row_class">
+    <div class="mx_auto" style="font-size:17px;color:#84D39A;">
+        <p style="color:#808080;"><a href="{% url 'eApp:allProducts' %}" style="font-size:17px;color:#808080;">Home   </a> >> <a href="{{product.category.get_url}}"style="font-size:17px;color:#808080;" >{{product.category}}</a>>>{{product.name}}</p>
     </div>
-    <br>
-    <div class="container">
-       <div class="row">
-            <div class="col-12 col-sm-12 col-lg-6 cl-md-12 text-center">
-                <img src="{{product.image.url}}" alt="{{product.name}}">
-            </div>
+</div>
+<br>
+<div class="container-fluid">
+    <div class="row" style="height:400px;width:100%;background-color:#D462FF">
+        <div class="col-lg-6" style="margin-top:20px;">
+            <img src="{{product.image.url}}" alt="{{product.name}}" style="height:450px;width:300px;">
         </div>
-        <div class="row">
-            <div class="col-md-12 col-sm-12  col-lg-6 col-12">
-                <h1 class="my_product_title">{{product.name}}</h1>
-                <p>${{product.price}}</p>
-                <p class="my-title">Product Description</p>
-                <p class="text-justify my_prod_text"> {{product.desc}}</p>
+       <div class="col-lg-6">
+           <div class="product_content">
+                 <h1 class="my_product_title" style="font-size:20px;color:#667C26;">{{product.name}}</h1>
+                <p class="price" style="font-size:20px;color:#15317E;">${{product.price}}</p>
+                <p class="my-title" style="font-size:20px;color:#437C17;">Product Description</p>
+                <p class="text-justify my_prod_text" style="font-size:20px;color:#437C17;"> {{product.desc}}</p>
                 {% if product.stock <= 0 %}
                 <p class="text-justify my_prod_text"><b>Out of stock</b></p>
                 {% else %}
-                <a  class="btn btn-secondary" href="{% url 'cart:add_cart' product.id %}">Add to Cart</a>
+                <a class="btn" style="background-color:#B048B5;height:30px;width:100px;color:#583759;font-size:16px" href="{% url 'cart:add_cart' product.id %}">Add to Cart</a>
                 {% endif %}
             </div>
-        </div>
+       </div>
     </div>
-    <div class="container">
-        <div class="row">
-            {% for product in products %}
-            <div class="col-12 col-sm-12 col-lg-6 cl-md-12 text-center">
-                <a href=""><img src="{{product.image.url}}" alt="{{product.name}}"> </a>
-                <div class="col-md-12 col-sm-12  col-lg-6 col-12">
-                    <h4 class="my_product_title">{{product.name}}</h4>
-                    <p class="text-justify my_prod_text">{{product.price}}</p>
-                </div>
-            </div>
-              {% endfor %}
-        </div>
 
-    </div>
-{% endblock %}
+</div>
+    {% endblock %}
